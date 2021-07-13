@@ -1,0 +1,126 @@
+/* Teal = #16B0A4 */
+/* Orange = #BF8978 */
+
+body {
+  font-family: 'Lora', serif;
+  height: 100%;
+  /* background-color: #FFE684; */
+}
+
+.container {
+  padding: 12px;
+}
+
+main {
+  padding: 10px;
+}
+
+@media (min-width: 960px) {
+  main {
+    padding: 20px;
+  }
+}
+
+.hide-me {
+  display: none !important;
+}
+
+h2 {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 3em;
+  color: #16B0A4;
+  margin: 0px;
+}
+
+h3 {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  text-align: center;
+  color: #16B0A4;
+  margin: 0px;
+}
+
+@media (max-width: 959px) {
+  h3 {
+    font-size: 1.75em;
+    /* color: #16B0A4; */
+    /* margin: 0px; */
+  }
+}
+
+h4 {
+  font-family: 'Lora', serif;
+  font-size: 2em;
+  color: #16B0A4;
+  margin: 0px;
+}
+
+@media (max-width: 959px) {
+  h4 {
+    font-size: 1.5em;
+    color: #16B0A4;
+    margin: 0px;
+  }
+}
+
+h5 {
+  font-family: 'Lora', serif;
+  font-size: 1.5em;
+  color: #16B0A4;
+  margin: 12px 0px;
+}
+
+h6 {
+  font-family: 'Lora', serif;
+  font-size: 1.25em;
+  color: #16B0A4;
+  margin: 12px 0px;
+}
+
+footer {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75em;
+}
+
+a:link,
+a:visited {
+  color: #BF8978;
+}
+
+a:hover {
+  color: #16B0A4;
+}
+
+.bs-description {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+}
+
+.bs-menugrid {
+  margin: 18px 12px;
+}
+
+.bs-menuItemName {
+  color: #BF8978;
+  font-weight: 700;
+}
+
+.bs-header {
+  position: relative;
+  background-image: url("/images/banner-bg.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
+.bs-pageTitle {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

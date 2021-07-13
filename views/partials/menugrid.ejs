@@ -1,0 +1,11 @@
+<div class="bs-menugrid">
+  <div class="uk-grid-medium uk-child-width-1-2@s" uk-grid>
+    <% menuItems.forEach(function(menuItem) { %> 
+      <div class="bs-menuData">
+        <span class="bs-menuItemName"><%= menuItem.name %></span><br>
+        <%= menuItem.description %>
+        <hr>
+      </div>
+    <% }); %>
+  </div>
+</div>
