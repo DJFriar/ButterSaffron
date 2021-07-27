@@ -25,6 +25,10 @@ main {
   display: none !important;
 }
 
+.show-me {
+  display: block !important;
+}
+
 h2 {
   font-family: 'Lora', serif;
   font-weight: 700;
@@ -80,8 +84,7 @@ h6 {
 }
 
 footer {
-  font-family: 'Cinzel', serif;
-  font-size: 0.75em;
+  font-size: 0.65em;
 }
 
 a:link,
@@ -123,4 +126,8 @@ a:hover {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.bs-faq {
+  cursor: pointer;
 }
