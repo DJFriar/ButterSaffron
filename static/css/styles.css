@@ -1,10 +1,15 @@
 /* Teal = #16B0A4 */
 /* Orange = #BF8978 */
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Lora', serif;
   height: 100%;
-  /* background-color: #FFE684; */
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -130,4 +135,24 @@ a:hover {
 
 .bs-faq {
   cursor: pointer;
+}
+
+.bs-content {
+  flex: 1 0 auto;
+}
+
+.bs-footer-container {
+  flex-shrink: 0;
+  background-color: #303338;
+}
+
+.bs-footer-content {
+  padding: 12px;
+  margin: 12px;
+}
+
+.bs-footer-content ul {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-left: 0px;
 }
