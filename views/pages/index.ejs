@@ -5,23 +5,20 @@
 <body> 
   <%- include('../partials/topnav'); %>
   <main class="bs-content">
-    <p>Here Image Goes Here</p>
-    <p>Put homepage stuff here</p>
-    <h6>ADMIN</h6>
-    <a href="/admin/aux-memorial-editor">Auxiliary Memorial Editor</a><br />
-    <a href="/admin/state-memorial-editor">State Memorial Editor</a><br />
-    <a href="/admin/memorial-metadata">Memorial Metadata</a><br />
-    <a href="/admin/user-management">User Management</a><br />
-    <h6>USER</h6>
-    <a href="/signup">Signup</a><br />
-    <a href="/login">Login</a><br />
-    <a href="/memorials">Memorials</a><br />
-    <a href="/user-profile">User Profile</a><br />
-    <a href="/submit">Submit</a><br />
-    <h6>PUBLIC</h6>
-    <a href="/livefeed">Live Feed</a><br />
+    <%- include('../partials/homehero'); %>
+    <div class="bs-page-content">
+      <div>
+        <h4>Welcome to our bakery</h4>
+        <p>Our goal is simple, to offer some of the best desserts to our community, while never compromising on the quality of the ingredients! We love what we do, and it shows.</p>
+        <a href="/about"><button class="uk-button uk-button-primary">About Us</button></a>
+      </div>
+    </div>
   </main>
   <footer>
     <%- include('../partials/footer'); %>
   </footer>
 </body>
+
+<script>
+
+</script>

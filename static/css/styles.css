@@ -16,10 +16,6 @@ body {
   padding: 12px;
 }
 
-main {
-  padding: 10px;
-}
-
 @media (min-width: 960px) {
   main {
     padding: 20px;
@@ -54,8 +50,6 @@ h3 {
 @media (max-width: 959px) {
   h3 {
     font-size: 1.75em;
-    /* color: #16B0A4; */
-    /* margin: 0px; */
   }
 }
 
@@ -88,6 +82,10 @@ h6 {
   margin: 12px 0px;
 }
 
+nav {
+  margin-bottom: 4px;
+}
+
 footer {
   font-size: 0.65em;
 }
@@ -99,6 +97,13 @@ a:visited {
 
 a:hover {
   color: #16B0A4;
+  text-decoration: none;
+}
+
+.uk-button-primary {
+  font-family: 'Lora', serif;
+  background-color: #16B0A4 !important;
+  border-radius: 24px;
 }
 
 .bs-description {
@@ -106,6 +111,10 @@ a:hover {
   font-weight: 400;
   font-style: italic;
   text-align: center;
+}
+
+.bs-page-content {
+  padding: 10px;
 }
 
 .bs-menugrid {
@@ -124,6 +133,36 @@ a:hover {
   height: 250px;
 }
 
+.bs-about-header {
+  position: relative;
+  background-image: url("/images/about-hero.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
+.bs-home-hero {
+  position: relative;
+  background-image: url("/images/home-hero.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
+.bs-topnav, .uk-navbar-container {
+  background-color: #303338 !important;
+  color: #16B0A4 !important;
+}
+
+.uk-navbar-nav > li > a {
+  font-family: 'Lora', serif;
+  font-size: .9em;
+  font-weight: 400;
+  color: #16B0A4;
+}
+
+.uk-navbar-nav > li:hover > a {
+  color: #BF8978;
+}
+
 .bs-pageTitle {
   margin: 0;
   position: absolute;
@@ -131,6 +170,16 @@ a:hover {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.bs-homepageTitle {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  right: 60%;
+  -ms-transform: translate(-2%, -50%);
+  transform: translate(-2%, -50%);
 }
 
 .bs-faq {
@@ -152,6 +201,7 @@ a:hover {
 }
 
 .bs-footer-content ul {
+  font-size: 1.5em;
   list-style-type: none;
   padding-left: 0px;
   margin-left: 0px;

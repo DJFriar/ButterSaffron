@@ -5,11 +5,12 @@
 <body> 
   <%- include('../partials/topnav'); %>
   <main class="bs-content">
-    <%- include('../partials/header', { title: 'Low Card & Sugar Free' }); %>
-    <p>Put hero here</p>
-    <h3>Low Carb & Sugar Free Menu</h3>
-    <div class="bs-description">Enjoy some of your favorite treats without the guilt! No need to sacrifice taste or flavor if you are following a low carb/sugar free diet. All our keto friendly desserts are sweetened with Swerve brand sweetener and Lily's organic chocolate. All of our breads listed below can be either no sugar added (sweetened with Splenda and natural sugar from the fruits) or low sugar (Sweetened with Splenda sugar blend). Please be sure to specify if you would prefer no sugar added or low sugar muffins or breads.</div>
-    <%- include('../partials/menugrid'); %>
+    <%- include('../partials/header', { title: 'Low Carb & Sugar Free' }); %>
+      <div class="bs-page-content">
+        <h3>Low Carb & Sugar Free Menu</h3>
+        <div class="bs-description">Enjoy some of your favorite treats without the guilt! No need to sacrifice taste or flavor if you are following a low carb/sugar free diet. All our keto friendly desserts are sweetened with Swerve brand sweetener and Lily's organic chocolate. All of our breads listed below can be either no sugar added (sweetened with Splenda and natural sugar from the fruits) or low sugar (Sweetened with Splenda sugar blend). Please be sure to specify if you would prefer no sugar added or low sugar muffins or breads.</div>
+        <%- include('../partials/menugrid'); %>
+      </div>
   </main>
   <footer>
     <%- include('../partials/footer'); %>
