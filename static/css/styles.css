@@ -44,7 +44,8 @@ h3 {
   font-size: 2.5em;
   text-align: center;
   color: #16B0A4;
-  margin: 0px;
+  margin: 0;
+  padding: 8px 0 8px 0;
 }
 
 @media (max-width: 959px) {
@@ -111,6 +112,7 @@ a:hover {
   font-weight: 400;
   font-style: italic;
   text-align: center;
+  padding-bottom: 18px;
 }
 
 .bs-page-content {
@@ -129,6 +131,27 @@ a:hover {
 .bs-header {
   position: relative;
   background-image: url("/images/banner-bg.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
+.bs-minidessert-header {
+  position: relative;
+  background-image: url("/images/minidessert-hero.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
+.bs-shortbread-header {
+  position: relative;
+  background-image: url("/images/shortbread-hero.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
+.bs-sugarfree-header {
+  position: relative;
+  background-image: url("/images/sugarfree-hero.jpg");
   background-size: cover;
   height: 250px;
 }
@@ -170,6 +193,9 @@ a:hover {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 12px;
+  padding: 10px;
 }
 
 .bs-homepageTitle {
@@ -205,4 +231,12 @@ a:hover {
   list-style-type: none;
   padding-left: 0px;
   margin-left: 0px;
+}
+
+.bs-price {
+  font-size: 1.4em;
+  font-weight: 700;
+  text-align: center;
+  color:#FFF;
+  margin: 0;
 }

@@ -14,8 +14,8 @@ module.exports = function (app) {
     res.render("pages/about");
   });
 
-  app.get("/brunch", async (req,res) => {
-    res.render("pages/brunch");
+  app.get("/boxes", async (req,res) => {
+    res.render("pages/boxes");
   });
 
   app.get("/contact", async (req,res) => {
@@ -47,21 +47,20 @@ module.exports = function (app) {
       { name: 'Thandai mousse', description: 'Everyone\'s favorite Holi drink in an irresistible combination of white chocolate and thandai in a light and airy mousse.' },
       { name: 'Strawberry Cheesecake', description: 'Layers of creamy cheesecake and fresh strawberries.' },
       { name: 'Pina Colada', description: 'Layers of coconut, pineapples, and whipped cream, topped with a cherry and toasted coconut.' },
-      { name: 'Gulab jamun cheesecake', description: 'We’ve taken the classic creamy dessert and dressed it up with Indian flair! A pistachio shortbread crust, creamy cheesecake laced with cardamom, pistachios and saffron.' }
+      { name: 'Gulab jamun cheesecake', description: 'We’ve taken the classic creamy dessert and dressed it up with Indian flair! A pistachio shortbread crust, creamy cheesecake laced with cardamom, pistachios, and saffron.' }
     ]
     res.render("pages/minidesserts", { menuItems: menuItems });
   });
 
   app.get("/shortbreads", async (req,res) => {
     var menuItems = [
-      { name: 'Lady Grey', description: '' },
-      { name: 'Pistachio Rose', description: '' },
-      { name: 'Lemon Lavender', description: '' },
-      { name: 'Maple Bourbon', description: '' },
-      { name: 'Saffron and Dark Chocolate', description: '' },
-      { name: 'Key Lime Coconut', description: '' },
-      { name: 'Amaretti Cookies', description: '' },
-      { name: 'Butter', description: '' }
+      { name: 'Lady Grey', description: 'Winner of 2018 SCF shortbread competition! A labor of love, earl grey infused shortbread, dark chocolate, toasted pistachios in shake of tea bags. Perfect with a cup of tea, London fog, or on its own.' },
+      { name: 'Pistachio Rose', description: 'A classic combination of Rose water and crunchy pistachios' },
+      { name: 'Lemon Lavender', description: 'Winner of 2019 SCF shortbread competition! Sweet, floral notes of manager balanced with the subtle tartness of lemon zest.' },
+      { name: 'Saffron and Dark Chocolate', description: 'The cookie that inspired our namesake! Buttery soft saffron laced shortbreads dipped in dark chocolate and pistachio.' },
+      { name: 'Key Lime Coconut', description: 'A tribute to Miami, the city that started my culinary journey! Toasted coconut and key limes in an all butter shortbread.' },
+      { name: 'Amaretti Cookies', description: 'A great GF alternative, a traditional Italian cookie with flavors of almond, vanilla, and cardamom.' },
+      { name: 'Butter', description: 'A classic all butter shortbread.' }
     ]
     res.render("pages/shortbreads", { menuItems: menuItems });
   });
