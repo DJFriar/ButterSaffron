@@ -260,3 +260,13 @@ a:hover {
 .bs-no-list-marker {
   list-style-type: none;
 }
+
+.bs-faq-section {
+  padding-left: 18px;
+}
+
+.bs-tooltip {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #16B0A4;
+}
