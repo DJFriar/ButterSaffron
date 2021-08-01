@@ -163,6 +163,13 @@ a:hover {
   height: 250px;
 }
 
+.bs-faq-header {
+  position: relative;
+  background-image: url("/images/faq-hero.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
 .bs-about-header {
   position: relative;
   background-image: url("/images/about-hero.jpg");
