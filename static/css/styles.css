@@ -16,12 +16,6 @@ body {
   padding: 12px;
 }
 
-@media (min-width: 960px) {
-  main {
-    padding: 20px;
-  }
-}
-
 .hide-me {
   display: none !important;
 }
