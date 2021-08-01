@@ -156,6 +156,13 @@ a:hover {
   height: 250px;
 }
 
+.bs-boxes-header {
+  position: relative;
+  background-image: url("/images/boxes-hero.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
 .bs-about-header {
   position: relative;
   background-image: url("/images/about-hero.jpg");
@@ -239,4 +246,16 @@ a:hover {
   text-align: center;
   color:#FFF;
   margin: 0;
+}
+
+.bs-box-upgrades {
+  padding: 24px 12px;
+}
+
+.bs-box-upgrades h4 {
+  text-align: center;
+}
+
+.bs-no-list-marker {
+  list-style-type: none;
 }
