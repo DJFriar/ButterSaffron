@@ -46,8 +46,7 @@ module.exports = function (app) {
       { name: 'Chai Cheesecake', description: 'Parle-G crust topped with a chai infused cheesecake.' },
       { name: 'Thandai mousse', description: 'Everyone\'s favorite Holi drink in an irresistible combination of white chocolate and thandai in a light and airy mousse.' },
       { name: 'Strawberry Cheesecake', description: 'Layers of creamy cheesecake and fresh strawberries.' },
-      { name: 'Pina Colada', description: 'Layers of coconut, pineapples, and whipped cream, topped with a cherry and toasted coconut.' },
-      { name: 'Gulab jamun cheesecake', description: 'We’ve taken the classic creamy dessert and dressed it up with Indian flair! A pistachio shortbread crust, creamy cheesecake laced with cardamom, pistachios, and saffron.' }
+      { name: 'Pina Colada', description: 'Layers of coconut, pineapples, and whipped cream, topped with a cherry and toasted coconut.' }
     ]
     res.render("pages/minidesserts", { menuItems: menuItems });
   });

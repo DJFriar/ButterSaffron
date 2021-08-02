@@ -79,6 +79,7 @@ h6 {
 
 nav {
   margin-bottom: 4px;
+  padding: 12px;
 }
 
 footer {
@@ -183,7 +184,7 @@ a:hover {
   color: #16B0A4 !important;
 }
 
-.uk-navbar-nav > li > a {
+.uk-navbar-nav > li > a, .uk-nav > li > a {
   font-family: 'Lora', serif;
   font-size: .9em;
   font-weight: 400;
@@ -285,4 +286,8 @@ a:hover {
   .bs-image-box img {
     width: 350px;
   }
+}
+
+.uk-navbar {
+  justify-content: center !important;
 }

@@ -1,24 +1,40 @@
+<!-- Navbar Section -->
 <div class="bs-topnav">
-  <!-- Navbar Section -->
   <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-center">
-      <div class="uk-navbar-left">
-        <a href="" class="uk-navbar-item uk-logo"></a>
-        <ul class="uk-navbar-nav">
-          <li><a href="/">Home</a></li>
-          <li><a href="/minidesserts">Mini Desserts</a></li>
-          <li><a href="/shortbreads">Shortbreads</a></li>
-        </ul>
-      </div>
+    <div class="uk-navbar-left">
+      <a class="uk-navbar-item uk-logo uk-hidden@m" href="/"><img src="/images/bs-logo-white.png" width="100" height="100"></a>
+      <ul class="uk-navbar-nav uk-visible@m">
+        <li><a href="/">Home</a></li>
+        <li><a href="/minidesserts">Mini Desserts</a></li>
+        <li><a href="/shortbreads">Shortbreads</a></li>
+      </ul>
+    </div>
+    <div class="uk-navbar-center uk-visible@m">
       <a class="uk-navbar-item uk-logo" href="/"><img src="/images/bs-logo-white.png" width="100" height="100"></a>
-      <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-          <li><a href="/boxes">Boxes</a></li>
-          <li><a href="/sugarfree">Sugar Free</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-      </div>
+    </div>
+    <div class="uk-navbar-right">
+      <a href="#" class="uk-navbar-toggle uk-hidden@m" style = "color: #16B0A4" uk-navbar-toggle-icon uk-toggle="target: #mobilenav"></a>
+      <ul class="uk-navbar-nav uk-visible@m">
+        <li><a href="/boxes">Boxes</a></li>
+        <li><a href="/sugarfree">Sugar Free</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
     </div>
   </nav>
+</div>
+
+<!-- Mobile Navigation -->
+<div id="mobilenav" uk-offcanvas="flip: false" class="uk-offcanvas">
+  <div class="uk-offcanvas-bar">
+    <ul class="uk-nav uk-text-center">
+      <li><a href="/">Home</a></li>
+      <li><a href="/minidesserts">Mini Desserts</a></li>
+      <li><a href="/shortbreads">Shortbreads</a></li>
+      <li><a href="/boxes">Boxes</a></li>
+      <li><a href="/sugarfree">Sugar Free</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
 </div>
