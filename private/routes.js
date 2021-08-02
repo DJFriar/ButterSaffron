@@ -53,12 +53,12 @@ module.exports = function (app) {
 
   app.get("/shortbreads", async (req,res) => {
     var menuItems = [
-      { name: 'Lady Grey', description: 'Winner of 2018 SCF shortbread competition! A labor of love, earl grey infused shortbread, dark chocolate, toasted pistachios in shake of tea bags. Perfect with a cup of tea, London fog, or on its own.' },
-      { name: 'Pistachio Rose', description: 'A classic combination of Rose water and crunchy pistachios' },
+      { name: 'Lady Grey', description: 'Winner of 2018 SCF shortbread competition! Earl grey infused shortbread, dark chocolate, toasted pistachios in shake of tea bags. Perfect with a cup of tea, London fog, or on its own.' },
       { name: 'Lemon Lavender', description: 'Winner of 2019 SCF shortbread competition! Sweet, floral notes of manager balanced with the subtle tartness of lemon zest.' },
       { name: 'Saffron and Dark Chocolate', description: 'The cookie that inspired our namesake! Buttery soft saffron laced shortbreads dipped in dark chocolate and pistachio.' },
       { name: 'Key Lime Coconut', description: 'A tribute to Miami, the city that started my culinary journey! Toasted coconut and key limes in an all butter shortbread.' },
       { name: 'Amaretti Cookies', description: 'A great GF alternative, a traditional Italian cookie with flavors of almond, vanilla, and cardamom.' },
+      { name: 'Pistachio Rose', description: 'A classic combination of Rose water and crunchy pistachios' },
       { name: 'Butter', description: 'A classic all butter shortbread.' }
     ]
     res.render("pages/shortbreads", { menuItems: menuItems });
