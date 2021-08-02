@@ -270,3 +270,19 @@ a:hover {
   text-decoration-style: wavy;
   text-decoration-color: #16B0A4;
 }
+
+.bs-about-content {
+  padding: 0 12px;
+}
+
+.bs-image-box img {
+  float: right;
+  width: 550px;
+  margin-left: 12px;
+}
+
+@media (max-width: 899px) {
+  .bs-image-box img {
+    width: 350px;
+  }
+}
