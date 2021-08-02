@@ -184,7 +184,7 @@ a:hover {
   color: #16B0A4 !important;
 }
 
-.uk-navbar-nav > li > a, .uk-nav > li > a {
+.uk-navbar-nav > li > a {
   font-family: 'Lora', serif;
   font-size: .9em;
   font-weight: 400;
@@ -294,9 +294,20 @@ a:hover {
 
 @media (max-width: 899px) {
   .bs-homepageTitle h2 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
   .bs-homepageTitle p {
     font-size: 14px;
   }
+
+  .bs-pageTitle h2 {
+    font-size: 2.2em;
+  }
+}
+
+.uk-nav > li > a {
+  font-family: 'Lora', serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #16B0A4;
 }
