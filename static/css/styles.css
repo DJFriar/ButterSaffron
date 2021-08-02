@@ -55,7 +55,7 @@ h4 {
   margin: 0px;
 }
 
-@media (max-width: 959px) {
+@media (max-width: 700px) {
   h4 {
     font-size: 1.5em;
     color: #16B0A4;
@@ -290,4 +290,13 @@ a:hover {
 
 .uk-navbar {
   justify-content: center !important;
+}
+
+@media (max-width: 899px) {
+  .bs-homepageTitle h2 {
+    font-size: 2em;
+  }
+  .bs-homepageTitle p {
+    font-size: 14px;
+  }
 }
