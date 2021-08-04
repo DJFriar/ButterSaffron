@@ -311,3 +311,14 @@ a:hover {
   font-weight: 400;
   color: #16B0A4;
 }
+
+.bs-dessert-card-details ul, .bs-brunch-card-details ul, .bs-tea-card-details ul {
+  list-style-type: disc;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.bs-dessert-card-details p, .bs-brunch-card-details p, .bs-tea-card-details p {
+  text-align: left;
+  font-size: 0.9em;
+}
