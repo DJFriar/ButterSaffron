@@ -322,3 +322,20 @@ a:hover {
   text-align: left;
   font-size: 0.9em;
 }
+
+.bs-menuImage {
+  border-radius: 4px;
+}
+
+.bs-centerVerticalContainer {
+  height: 100%;
+  position: relative;
+}
+
+.bs-centerVertical {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
