@@ -76,4 +76,16 @@ module.exports = function (app) {
     ]
     res.render("pages/sugarfree", { menuItems: menuItems });
   });
+
+  app.get("/tables", async (req,res) => {
+    var menuItems = [
+      { name: 'Mini Cream Puffs', image: 'MiniCreamPuffs.jpg', description: '' },
+      { name: 'Mini Fruit Tarts', image: 'MiniFruitTart.jpg', description: '' },
+      { name: 'Macarons', image: 'NoImage.png', description: '' },
+      { name: 'Shortbread Cookies', image: 'NoImage.png', description: '' },
+      { name: 'Logo Cookies', image: 'logocookies2.jpg', description: '' },
+      { name: 'Setup & Stand Rental', image: 'DessertSetup.jpg', description: '' }
+    ]
+    res.render("pages/tables", {menuItems: menuItems });
+  });
 }

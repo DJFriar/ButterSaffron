@@ -151,6 +151,13 @@ a:hover {
   height: 250px;
 }
 
+.bs-tables-header {
+  position: relative;
+  background-image: url("/images/minidessert-hero-old.jpg");
+  background-size: cover;
+  height: 250px;
+}
+
 .bs-boxes-header {
   position: relative;
   background-image: url("/images/boxes-hero.jpg");
