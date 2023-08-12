@@ -9,6 +9,10 @@
           <div class="bs-menuData bs-centerVertical">
             <span class="bs-menuItemName"><%= menuItem.name %></span><br>
             <%= menuItem.description %>
+            <% if (menuItem.allergens) { %>
+              <p></p>
+              *Contains <%= menuItem.allergens %>
+            <% } %> 
           </div>
         </div>
       </div>
