@@ -37,7 +37,7 @@ module.exports = function (app) {
       { name: 'Mixed Berry Cheesecake', image: 'NoImage.png', description: '', allergens: 'dairy and gluten.' },
       { name: 'Triple Chocolate Mousse', image: 'TripleChocolateMousse.jpg', description: 'A chocolate lovers dream, three layers of decadent mousses, topped with chocolate accents.', allergens: 'dairy.' },
       { name: 'Rose Panna Cotta', image: 'RosePannacotta2.jpg', description: 'Our take on the refreshing falooda with an italian twist.', allergens: '' },
-      { name: 'Mango Panna Cotta', image: 'MangoPannacotta.jpg', description: 'Rich and creamy panna cotta infused with mangoes and saffron.', allergens: 'dairy.' },
+      { name: 'Mango Panna Cotta', image: 'MangoPannacotta2.jpg', description: 'Rich and creamy panna cotta infused with mangoes and saffron.', allergens: 'dairy.' },
       { name: 'Mixed Berry Panna Cotta', image: 'NoImage.png', description: 'A creamy Italian dessert that melts in your mouth, topped with a mixed berry coulis and fresh berries.', allergens: 'dairy.' },
       { name: 'Coconut Panna Cotta', image: 'NoImage.png', description: 'Take your taste buds on a tropical vacation with this beauty! Coconut milk panna cotta topped with fresh fruit and toasted coconut.', allergens: 'dairy.' },
       { name: 'Banana Pudding', image: 'NoImage.png', description: 'A southern classic no one can resist! Layers of creamy vanilla custard with fresh bananas and shortbread.', allergens: 'dairy and gluten.' },
@@ -75,11 +75,11 @@ module.exports = function (app) {
   app.get("/tables", async (req,res) => {
     var menuItems = [
       { name: 'Dessert Buffet', image: 'DessertBuffet.jpg', description: '', allergens: '' },
-      { name: 'Mini Cream Puffs', image: 'MiniCreamPuffs.jpg', description: '', allergens: '' },
-      { name: 'Mini Fruit Tarts', image: 'MiniFruitTarts2.jpg', description: '', allergens: '' },
-      { name: 'Macarons', image: 'NoImage.png', description: '', allergens: '' },
-      { name: 'Shortbread Cookies', image: 'NoImage.png', description: '', allergens: '' },
-      { name: 'Logo Cookies', image: 'LogoCookies.jpg', description: '', allergens: '' },
+      { name: 'Mini Cream Puffs', image: 'MiniCreamPuffs.jpg', description: '$30/dozen', allergens: '' },
+      { name: 'Mini Fruit Tarts', image: 'MiniFruitTarts2.jpg', description: '$30/dozen', allergens: '' },
+      { name: 'Macarons', image: 'NoImage.png', description: '$30/dozen', allergens: '' },
+      { name: 'Shortbread Cookies', image: 'NoImage.png', description: '$30/dozen', allergens: '' },
+      { name: 'Logo Cookies', image: 'LogoCookies.jpg', description: '$30/dozen', allergens: '' },
       { name: 'Setup & Stand Rental', image: 'DessertSetup.jpg', description: '', allergens: '' }
     ]
     res.render("pages/tables", {menuItems: menuItems });
