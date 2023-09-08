@@ -14,9 +14,9 @@ module.exports = function (app) {
     res.render("pages/about");
   });
 
-  app.get("/boxes", async (req,res) => {
-    res.render("pages/boxes");
-  });
+  // app.get("/boxes", async (req,res) => {
+  //   res.render("pages/boxes");
+  // });
 
   app.get("/contact", async (req,res) => {
     res.render("pages/contactus");
