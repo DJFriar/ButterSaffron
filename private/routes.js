@@ -79,8 +79,8 @@ module.exports = function (app) {
       { name: 'Mini Fruit Tarts', image: 'MiniFruitTarts2.jpg', description: '$30/dozen', allergens: '' },
       { name: 'Macarons', image: 'NoImage.png', description: '$30/dozen', allergens: '' },
       { name: 'Shortbread Cookies', image: 'NoImage.png', description: '$30/dozen', allergens: '' },
-      { name: 'Logo Cookies', image: 'LogoCookies.jpg', description: '$30/dozen', allergens: '' },
-      { name: 'Setup & Stand Rental', image: 'DessertSetup.jpg', description: '', allergens: '' }
+      { name: 'Logo Cookies', image: 'LogoCookies.jpg', description: '$30/dozen, can be customized with a logo or image of your choice.', allergens: '' },
+      { name: 'Setup & Stand Rental', image: 'DessertSetup.jpg', description: 'Starting at $25, plus a refundable deposit.', allergens: '' }
     ]
     res.render("pages/tables", {menuItems: menuItems });
   });
