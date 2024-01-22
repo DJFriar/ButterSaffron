@@ -30,6 +30,7 @@ module.exports = function (app) {
     var menuItems = [
       { name: 'Rasmalai Tres Leches', image: 'RasmalaiTresLeches2.jpg', description: 'Our take on a Mexican favorite, our sponge cake soaked in a malai mixture scented with cardamom and pistachios.', allergens: 'dairy, eggs, gluten, and nuts.' },
       { name: 'Tres Leches', image: 'TresLeches2.jpg', description: 'Our ultra light sponge cake soaked in a sweet milk mixture, topped with whipped cream and fruit.', allergens: 'dairy, eggs, and gluten.' },
+      { name: 'Chai Tiramisu', image: 'ChaiTiramisu.jpg', description: 'Our take on a Desi favorite, chai biscoot! Layers of creamy mascarpone, lady fingers soaked in masala chai (ChaiwaliTx), chai spiced coconut powder.', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
       { name: 'Tiramisu', image: 'Tiramisu2.jpg', description: 'Lady fingers soaked in espresso, mascarpone mousse and dusted with coco powder.', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
       { name: 'Lemon Tiramisu', image: 'LemonTiramisu.jpg', description: 'A lighter version of everyone’s favorite dessert, ladyfingers soaked in a limoncello syrup, mascarpone cream and garnished with fresh berries. ', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
       { name: 'Gulab Jamun Cheesecake', image: 'NoImage.png', description: 'Cardamom and rose water scented cheesecake layered with gulab jamun.', allergens: 'dairy, gluten, and nuts.' },
