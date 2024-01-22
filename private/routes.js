@@ -41,7 +41,8 @@ module.exports = function (app) {
       { name: 'Mixed Berry Panna Cotta', image: 'NoImage.png', description: 'A creamy Italian dessert that melts in your mouth, topped with a mixed berry coulis and fresh berries.', allergens: 'dairy.' },
       { name: 'Coconut Panna Cotta', image: 'NoImage.png', description: 'Take your taste buds on a tropical vacation with this beauty! Coconut milk panna cotta topped with fresh fruit and toasted coconut.', allergens: 'dairy.' },
       { name: 'Banana Pudding', image: 'NoImage.png', description: 'A southern classic no one can resist! Layers of creamy vanilla custard with fresh bananas and shortbread.', allergens: 'dairy and gluten.' },
-      { name: 'Strawberry Rose Cupcakes', image: 'StrawberryRoseCupcakes.jpg', description: 'Strawberry and rose water cupcakes accented with rose milk.', allergens: 'dairy and gluten.' }
+      { name: 'Strawberry Rose Cupcakes', image: 'StrawberryRoseCupcakes.jpg', description: 'Strawberry and rose water cupcakes accented with rose milk.', allergens: 'dairy and gluten.' },
+      { name: 'Mini Cheesecake Bites', image: 'NoImage.png', description: 'Flavor options are chocolate, key lime & NY style.', allergens: 'dairy, eggs, and gluten.' }
     ]
     res.render("pages/minidesserts", { menuItems: menuItems });
   });
