@@ -33,7 +33,7 @@ module.exports = function (app) {
       { name: 'Chai Tiramisu', image: 'ChaiTiramisu.jpg', description: 'Our take on a Desi favorite, chai biscoot! Layers of creamy mascarpone, lady fingers soaked in masala chai (ChaiwaliTx), chai spiced coconut powder.', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
       { name: 'Tiramisu', image: 'Tiramisu2.jpg', description: 'Lady fingers soaked in espresso, mascarpone mousse and dusted with coco powder.', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
       { name: 'Lemon Tiramisu', image: 'LemonTiramisu.jpg', description: 'A lighter version of everyone’s favorite dessert, ladyfingers soaked in a limoncello syrup, mascarpone cream and garnished with fresh berries. ', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
-      { name: 'Gulab Jamun Cheesecake', image: 'NoImage.png', description: 'Cardamom and rose water scented cheesecake layered with gulab jamun.', allergens: 'dairy, gluten, and nuts.' },
+      { name: 'Gulab Jamun Cheesecake', image: 'GulabJamunCheesecake-Tri.jpg', description: 'Cardamom and rose water scented cheesecake layered with gulab jamun.', allergens: 'dairy, gluten, and nuts.' },
       { name: 'Mango Cheesecake', image: 'MangoCheesecake1.jpg', description: 'Creamy mango cheesecake filling with a graham cracker crust.', allergens: 'dairy, nuts, and gluten.' },
       { name: 'Mixed Berry Cheesecake', image: 'NoImage.png', description: '', allergens: 'dairy and gluten.' },
       { name: 'Triple Chocolate Mousse', image: 'TripleChocolateMousse.jpg', description: 'A chocolate lovers dream, three layers of decadent mousses, topped with chocolate accents.', allergens: 'dairy.' },
