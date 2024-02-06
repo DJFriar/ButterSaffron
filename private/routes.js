@@ -24,7 +24,7 @@ module.exports = function (app) {
 
   app.get("/desidesserts", async (req,res) => {
     var menuItems = [
-      { name: 'Rasmalai Tres Leches', image: 'RasmalaiTresLeches2.jpg', description: 'Our take on a Mexican favorite, sponge cake soaked in a malai mix scented with cardamom & pistachios.', allergens: 'dairy, eggs, gluten, and nuts.' },
+      { name: 'Rasmalai Tres Leches', image: 'RasmalaiTresLeches2.jpg', description: 'Sponge cake soaked in a malai mix scented with cardamom and pistachios, a Mexican favorite.', allergens: 'dairy, eggs, gluten, & nuts.' },
       { name: 'Chai Tiramisu', image: 'ChaiTiramisu.jpg', description: 'Our take on a Desi favorite, chai biscoot! Layers of creamy mascarpone, lady fingers soaked in masala chai (ChaiwaliTx), chai spiced coco powder.', allergens: 'dairy, eggs, and gluten.' },
       { name: 'Mango Cheesecake', image: 'MangoCheesecake1.jpg', description: 'Creamy mango cheesecake filling with a graham cracker crust.', allergens: 'dairy, nuts, and gluten.' },
       { name: 'Gulab Jamun Cheesecake', image: 'GulabJamunCheesecake-Tri.jpg', description: 'Cardamom and rose water scented cheesecake layered with gulab jamun.', allergens: 'dairy, gluten, and nuts.' },
