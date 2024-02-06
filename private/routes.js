@@ -25,7 +25,7 @@ module.exports = function (app) {
   app.get("/desidesserts", async (req,res) => {
     var menuItems = [
       { name: 'Rasmalai Tres Leches', image: 'RasmalaiTresLeches2.jpg', description: 'Our take on a Mexican favorite, our sponge cake soaked in a malai mixture scented with cardamom and pistachios.', allergens: 'dairy, eggs, gluten, and nuts.' },
-      { name: 'Chai Tiramisu', image: 'ChaiTiramisu.jpg', description: 'Our take on a Desi favorite, chai biscoot! Layers of creamy mascarpone, lady fingers soaked in masala chai (ChaiwaliTx), chai spiced coconut powder.', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
+      { name: 'Chai Tiramisu', image: 'ChaiTiramisu.jpg', description: 'Our take on a Desi favorite, chai biscoot! Layers of creamy mascarpone, lady fingers soaked in masala chai (ChaiwaliTx), chai spiced coco powder.', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
       { name: 'Mango Cheesecake', image: 'MangoCheesecake1.jpg', description: 'Creamy mango cheesecake filling with a graham cracker crust.', allergens: 'dairy, nuts, and gluten.' },
       { name: 'Gulab Jamun Cheesecake', image: 'GulabJamunCheesecake-Tri.jpg', description: 'Cardamom and rose water scented cheesecake layered with gulab jamun.', allergens: 'dairy, gluten, and nuts.' },
       { name: 'Rabri Panna Cotta', image: 'NoImage.png', description: 'Inspired by one of my favorite childhood treats,  blend of fresh cream, almonds, pistachios, and saffron.', allergens: 'dairy and nuts.' },
@@ -39,13 +39,13 @@ module.exports = function (app) {
     var menuItems = [
       { name: 'Triple Chocolate Mousse', image: 'TripleChocolateMousse.jpg', description: 'A chocolate lovers dream, three layers of decadent mousses, topped with chocolate accents.', allergens: 'dairy.' },
       { name: 'Tiramisu', image: 'Tiramisu2.jpg', description: 'Lady fingers soaked in espresso, mascarpone mousse and dusted with coco powder.', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
-      { name: 'Lemoncello Tiramisu', image: 'LemonTiramisu.jpg', description: 'A lighter version of everyone’s favorite dessert, ladyfingers soaked in a limoncello syrup, mascarpone cream and garnished with fresh berries. ', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
-      { name: 'Tres Leches', image: 'TresLeches2.jpg', description: 'Our ultra light sponge cake soaked in a sweet milk mixture, topped with whipped cream and fruit.', allergens: 'dairy, eggs, and gluten.' },
+      { name: 'Lemoncello Tiramisu', image: 'LemonTiramisu.jpg', description: 'Layers of ladyfingers soaked in a limoncello syrup, mascarpone cream and garnished with fresh berries. ', allergens: 'dairy, eggs, and gluten. Eggless available upon request.' },
+      { name: 'Tres Leches', image: 'TresLeches2.jpg', description: 'Sponge cake soaked in a sweet milk mixture, topped with whipped cream and fruit.', allergens: 'dairy, eggs, and gluten.' },
       // { name: 'Mixed Berry Cheesecake', image: 'NoImage.png', description: '', allergens: 'dairy and gluten.' },
       { name: 'Mixed Berry Panna Cotta', image: 'NoImage.png', description: 'A creamy Italian dessert that melts in your mouth, topped with a mixed berry coulis and fresh berries.', allergens: 'dairy.' },
       { name: 'NY Style Cheesecake', image: 'NoImage.png', description: 'Creamy, no bake cheesecake topped with fresh strawberry compote.', allergens: 'dairy and gluten.' },
       { name: 'Banana Pudding', image: 'NoImage.png', description: 'A southern classic no one can resist! Layers of creamy vanilla custard with fresh bananas and shortbread.', allergens: 'dairy and gluten.' },
-      { name: 'Coconut Panna Cotta', image: 'NoImage.png', description: 'Take your taste buds on a tropical vacation with this beauty! Coconut milk panna cotta topped with fresh fruit and toasted coconut.', allergens: 'dairy.' },
+      { name: 'Coconut Panna Cotta', image: 'NoImage.png', description: 'Coconut milk panna cotta topped with fresh fruit and toasted coconut. ', allergens: 'dairy.' },
       // { name: 'Strawberry Rose Cupcakes', image: 'StrawberryRoseCupcakes.jpg', description: 'Strawberry and rose water cupcakes accented with rose milk.', allergens: 'dairy and gluten.' },
       { name: 'Strawberry Shortcake', image: 'NoImage.png', description: 'Vanilla sponge cake, fresh whipped cream, strawberries.', allergens: 'dairy and gluten.' },
     ]
