@@ -28,9 +28,9 @@ module.exports = function (app) {
       { name: 'Chai Tiramisu', image: 'ChaiTiramisu.jpg', description: 'Our take on a Desi favorite, chai biscoot! Layers of creamy mascarpone, lady fingers soaked in masala chai (ChaiwaliTx), chai spiced coco powder.', allergens: 'dairy, eggs, and gluten.' },
       { name: 'Mango Cheesecake', image: 'MangoCheesecake.jpg', description: 'Creamy mango cheesecake filling with a graham cracker crust.', allergens: 'dairy, nuts, and gluten.' },
       { name: 'Gulab Jamun Cheesecake', image: 'GulabJamunCheesecake.jpg', description: 'Cardamom and rose water scented cheesecake layered with gulab jamun.', allergens: 'dairy, gluten, and nuts.' },
-      { name: 'Rabri Panna Cotta', image: 'NoImage.png', description: 'Inspired by one of my favorite childhood treats,  blend of fresh cream, almonds, pistachios, and saffron.', allergens: 'dairy and nuts.' },
       { name: 'Rose Panna Cotta', image: 'RosePannacotta2.jpg', description: 'Our take on the refreshing falooda with an italian twist.', allergens: '' },
       { name: 'Mango Panna Cotta', image: 'MangoPannacotta.jpg', description: 'Rich and creamy panna cotta infused with mangoes and saffron.', allergens: 'dairy.' },
+      { name: 'Rabri Panna Cotta', image: 'NoImage.png', description: 'Inspired by one of my favorite childhood treats,  blend of fresh cream, almonds, pistachios, and saffron.', allergens: 'dairy and nuts.' },
     ]
     res.render("pages/desidesserts", { menuItems: menuItems });
   });
