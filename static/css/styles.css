@@ -540,7 +540,7 @@ a:active {
   font-size: 0.9em;
   font-weight: 400;
   color: #16B0A4;
-  padding: 12px 16px;
+  padding: 12px 12px;
   min-height: 44px;
   display: flex;
   align-items: center;
@@ -556,7 +556,20 @@ a:active {
 
 @media (min-width: 768px) {
   .uk-navbar-nav > li > a {
-    padding: 14px 18px;
+    padding: 14px 14px;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1128px) {
+  .uk-navbar-nav > li > a {
+    padding: 14px 10px;
+    font-size: 0.85em;
+  }
+}
+
+@media (min-width: 1025px) {
+  .uk-navbar-nav > li > a {
+    padding: 14px 10px;
   }
 }
 
