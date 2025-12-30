@@ -1,18 +1,21 @@
 <div class="bs-menugrid">
-  <div class="uk-grid-medium uk-child-width-1-2@m uk-grid-divider" uk-grid>
+  <div class="uk-grid-medium uk-child-width-1-1@s uk-child-width-1-2@m uk-grid-divider" uk-grid>
     <% menuItems.forEach(function(menuItem) { %> 
-      <div class="uk-grid-match " uk-grid>
-        <div class="uk-width-1-3">
-          <img class="bs-menuImage" data-src="/images/<%= menuItem.image %>" uk-img>
-        </div>
-        <div class="uk-width-2-3 bs-centerVerticalContainer">
-          <div class="bs-menuData bs-centerVertical">
-            <span class="bs-menuItemName"><%= menuItem.name %></span><br>
-            <%= menuItem.description %>
-            <% if (menuItem.allergens) { %>
-              <p></p>
-              *Contains <%= menuItem.allergens %>
-            <% } %> 
+      <div class="bs-menu-item">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+          <div class="uk-width-1-1 uk-width-1-3@m">
+            <div class="bs-menu-image-wrapper">
+              <img class="bs-menuImage" src="/images/<%= menuItem.image %>" data-src="/images/<%= menuItem.image %>" alt="<%= menuItem.name %>" uk-img>
+            </div>
+          </div>
+          <div class="uk-width-1-1 uk-width-2-3@m">
+            <div class="bs-menuData">
+              <span class="bs-menuItemName"><%= menuItem.name %></span>
+              <p class="bs-menu-description"><%= menuItem.description %></p>
+              <% if (menuItem.allergens) { %>
+                <p class="bs-menu-allergens">*Contains <%= menuItem.allergens %></p>
+              <% } %> 
+            </div>
           </div>
         </div>
       </div>
