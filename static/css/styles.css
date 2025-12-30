@@ -366,14 +366,14 @@ a:active {
 
 @media (min-width: 480px) {
   .bs-menuImage {
-    max-height: 220px;
-    min-height: 180px;
+    max-height: 180px;
+    min-height: 140px;
   }
 }
 
 @media (min-width: 768px) {
   .bs-menuImage {
-    max-height: none;
+    max-height: 200px;
     min-height: 150px;
     border-radius: 4px;
   }
