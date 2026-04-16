@@ -19,7 +19,7 @@ module.exports = function (app) {
     var host = req.get("host");
     var baseUrl = protocol + "://" + host;
     res.render("pages/order", {
-      pageTitle: "Custom Orders | Butter & Saffron Baking Co",
+      pageTitle: "Custom Orders | Butter & Saffron",
       formNextUrl: baseUrl + "/order?sent=1",
       submitted: req.query.sent === "1"
     });
