@@ -1,0 +1,137 @@
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+  <%- include('../partials/topnav'); %>
+  <main class="bs-content">
+    <%- include('../partials/header', { title: 'Custom Orders', price: '', header: 'bs-order-header' }); %>
+    <div class="bs-page-content bs-order-page">
+      <% if (typeof submitted !== 'undefined' && submitted) { %>
+      <div class="uk-alert-success uk-margin-medium-bottom" uk-alert>
+        <p>Thank you! Your message was sent. We will get back to you soon.</p>
+      </div>
+      <% } %>
+
+      <section class="bs-order-section" aria-labelledby="order-form-title">
+        <h3 id="order-form-title" class="bs-order-form-heading">Custom dessert order</h3>
+        <div class="bs-order-intro">
+          <p>
+            Tell us what you are looking for and we will follow up with a quote—whether it is a custom cake, mini desserts, a dessert table, or another event order. Custom work varies by design, size, and ingredients.
+            For reference photos or inspiration, reply to your confirmation email after submitting this form.
+          </p>
+          <p class="bs-order-lead">
+            <strong>Lead time:</strong> We prefer at least one week&apos;s notice; rush orders may incur a fee. See our <a href="/faq">FAQ</a> for details.
+          </p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:tanvi@butterandsaffron.com">tanvi@butterandsaffron.com</a>
+          </p>
+        </div>
+
+        <form id="bs-order-form" class="bs-order-form uk-form-stacked" action="https://formsubmit.co/tanvi@butterandsaffron.com" method="POST">
+          <input type="hidden" name="_subject" value="Butter & Saffron — Custom dessert order">
+          <input type="hidden" name="_next" value="<%= formNextUrl %>">
+          <input type="hidden" name="_captcha" value="false">
+
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-first">First name <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-first" name="first_name" type="text" required autocomplete="given-name">
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-last">Last name <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-last" name="last_name" type="text" required autocomplete="family-name">
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-email">Email <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-email" name="email" type="email" required autocomplete="email">
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-phone">Phone <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-phone" name="phone" type="tel" required autocomplete="tel">
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-date">Order date <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-date" name="order_date" type="date" required>
+          </div>
+          <fieldset class="uk-margin">
+            <legend class="uk-form-label uk-margin-small-bottom">Pickup or delivery? <span class="bs-req" aria-hidden="true">*</span></legend>
+            <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Pickup" required> Pickup</label>
+            <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Delivery"> Delivery</label>
+          </fieldset>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-time">Pickup / delivery time <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-time" name="pickup_delivery_time" type="text" placeholder="e.g. Saturday 2pm" required>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-address">Delivery address</label>
+            <textarea class="uk-textarea" id="co-address" name="delivery_address" rows="2" placeholder="Required if delivery"></textarea>
+          </div>
+          <fieldset class="uk-margin bs-order-type-fieldset" aria-describedby="order-type-error">
+            <legend class="uk-form-label uk-margin-small-bottom">What are you ordering? <span class="bs-req" aria-hidden="true">*</span> <span class="bs-order-hint">(select all that apply)</span></legend>
+            <p id="order-type-error" class="bs-order-type-error" role="alert" hidden>Please select at least one option.</p>
+            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Custom cake"> Custom cake</label>
+            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Mini desserts"> Mini desserts</label>
+            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Desi fusion dessert"> Desi fusion dessert</label>
+            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Shortbreads"> Shortbreads</label>
+            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Dessert table / event"> Dessert table / event</label>
+            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Other"> Other (describe in notes below)</label>
+          </fieldset>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-flavor">Flavors &amp; preferences <span class="bs-req" aria-hidden="true">*</span></label>
+            <textarea class="uk-textarea" id="co-flavor" name="flavors" rows="3" required placeholder="Flavors, dietary needs, size ideas"></textarea>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-allergies">Food allergies</label>
+            <textarea class="uk-textarea" id="co-allergies" name="allergies" rows="2" placeholder="List any allergies or leave blank"></textarea>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-servings">Servings or quantity needed <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-servings" name="servings" type="text" required>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-notes">Design &amp; order notes <span class="bs-req" aria-hidden="true">*</span></label>
+            <textarea class="uk-textarea" id="co-notes" name="design_notes" rows="4" required placeholder="Theme, colors, inscription, and any details we should know"></textarea>
+          </div>
+
+          <button class="uk-button uk-button-primary bs-order-submit" type="submit">Submit order form</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
+  <script>
+    (function () {
+      var form = document.getElementById("bs-order-form");
+      if (!form) return;
+      var err = document.getElementById("order-type-error");
+      var boxes = form.querySelectorAll('input[name="order_type[]"]');
+      form.addEventListener("submit", function (e) {
+        var any = false;
+        boxes.forEach(function (b) {
+          if (b.checked) any = true;
+        });
+        if (!any) {
+          e.preventDefault();
+          if (err) {
+            err.hidden = false;
+          }
+          return;
+        }
+        if (err) err.hidden = true;
+      });
+      boxes.forEach(function (b) {
+        b.addEventListener("change", function () {
+          if (err && !err.hidden) {
+            var any = false;
+            boxes.forEach(function (x) {
+              if (x.checked) any = true;
+            });
+            if (any) err.hidden = true;
+          }
+        });
+      });
+    })();
+  </script>
+</body>

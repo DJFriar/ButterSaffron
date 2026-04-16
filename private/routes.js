@@ -14,6 +14,17 @@ module.exports = function (app) {
     res.render("pages/about");
   });
 
+  app.get("/order", async (req,res) => {
+    var protocol = req.protocol;
+    var host = req.get("host");
+    var baseUrl = protocol + "://" + host;
+    res.render("pages/order", {
+      pageTitle: "Custom Orders | Butter & Saffron Baking Co",
+      formNextUrl: baseUrl + "/order?sent=1",
+      submitted: req.query.sent === "1"
+    });
+  });
+
   app.get("/contact", async (req,res) => {
     res.render("pages/contactus");
   });
