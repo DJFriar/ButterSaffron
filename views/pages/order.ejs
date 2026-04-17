@@ -21,7 +21,7 @@
             For reference photos or inspiration, reply to your confirmation email after submitting this form.
           </p>
           <p class="bs-order-lead">
-            <strong>Lead time:</strong> We prefer at least one week&apos;s notice; rush orders may incur a fee. See our <a href="/faq">FAQ</a> for details.
+            <strong>Lead time:</strong> We prefer at least two week&apos;s notice; rush orders may incur a fee. See our <a href="/faq">FAQ</a> for details.
           </p>
           <p>
             <strong>Email:</strong> <a href="mailto:tanvi@butterandsaffron.com">tanvi@butterandsaffron.com</a>
@@ -34,12 +34,8 @@
           <input type="hidden" name="_captcha" value="false">
 
           <div class="uk-margin">
-            <label class="uk-form-label" for="co-first">First name <span class="bs-req" aria-hidden="true">*</span></label>
-            <input class="uk-input" id="co-first" name="first_name" type="text" required autocomplete="given-name">
-          </div>
-          <div class="uk-margin">
-            <label class="uk-form-label" for="co-last">Last name <span class="bs-req" aria-hidden="true">*</span></label>
-            <input class="uk-input" id="co-last" name="last_name" type="text" required autocomplete="family-name">
+            <label class="uk-form-label" for="co-full">Full name <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-full" name="full_name" type="text" required autocomplete="given-name">
           </div>
           <div class="uk-margin">
             <label class="uk-form-label" for="co-email">Email <span class="bs-req" aria-hidden="true">*</span></label>
@@ -50,43 +46,99 @@
             <input class="uk-input" id="co-phone" name="phone" type="tel" required autocomplete="tel">
           </div>
           <div class="uk-margin">
-            <label class="uk-form-label" for="co-date">Order date <span class="bs-req" aria-hidden="true">*</span></label>
+            <label class="uk-form-label" for="co-date">Event start date <span class="bs-req" aria-hidden="true">*</span></label>
             <input class="uk-input" id="co-date" name="order_date" type="date" required>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-address">Event venue address</label>
+            <textarea class="uk-textarea" id="co-address" name="delivery_address" rows="2" placeholder="Required if delivery"></textarea>
+          </div>
+          <div class="uk-margin">
+            <label class="uk-form-label" for="co-guest-count">Estimated guest count</label>
+            <textarea class="uk-input" id="co-guest-count" name="guest-count" type="text"></textarea>
           </div>
           <fieldset class="uk-margin">
             <legend class="uk-form-label uk-margin-small-bottom">Pickup or delivery? <span class="bs-req" aria-hidden="true">*</span></legend>
             <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Pickup" required> Pickup</label>
             <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Delivery"> Delivery</label>
+            <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Setup"> Setup</label>
           </fieldset>
           <div class="uk-margin">
             <label class="uk-form-label" for="co-time">Pickup / delivery time <span class="bs-req" aria-hidden="true">*</span></label>
             <input class="uk-input" id="co-time" name="pickup_delivery_time" type="text" placeholder="e.g. Saturday 2pm" required>
           </div>
-          <div class="uk-margin">
-            <label class="uk-form-label" for="co-address">Delivery address</label>
-            <textarea class="uk-textarea" id="co-address" name="delivery_address" rows="2" placeholder="Required if delivery"></textarea>
-          </div>
-          <fieldset class="uk-margin bs-order-type-fieldset" aria-describedby="order-type-error">
-            <legend class="uk-form-label uk-margin-small-bottom">What are you ordering? <span class="bs-req" aria-hidden="true">*</span> <span class="bs-order-hint">(select all that apply)</span></legend>
+          <fieldset class="uk-margin bs-order-type-fieldset" aria-describedby="order-type-error order-flavor-error">
+            <legend class="uk-form-label uk-margin-small-bottom">Please select the types of desserts you are interested in <span class="bs-req" aria-hidden="true">*</span> <span class="bs-order-hint">(select all that apply)</span></legend>
             <p id="order-type-error" class="bs-order-type-error" role="alert" hidden>Please select at least one option.</p>
-            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Custom cake"> Custom cake</label>
-            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Mini desserts"> Mini desserts</label>
-            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Desi fusion dessert"> Desi fusion dessert</label>
-            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Shortbreads"> Shortbreads</label>
-            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Dessert table / event"> Dessert table / event</label>
-            <label class="bs-order-check"><input class="uk-checkbox" name="order_type[]" type="checkbox" value="Other"> Other (describe in notes below)</label>
+            <p id="order-flavor-error" class="bs-order-type-error" role="alert" hidden>Please select at least one flavor for each dessert type you checked.</p>
+
+            <div class="bs-order-type-option">
+              <label class="bs-order-check" for="co-type-mini"><input class="uk-checkbox" id="co-type-mini" name="order_type[]" type="checkbox" value="Mini desserts" data-bs-flavor="mini"> Mini Desserts (dozen)</label>
+              <div id="co-flavor-wrap-mini" class="bs-order-flavor-wrap" hidden>
+                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required.</p>
+                <ul class="bs-order-flavor-list" role="group" aria-labelledby="co-flavor-mini-legend">
+                  <% if (typeof orderFlavors !== "undefined" && orderFlavors.miniDesserts) { orderFlavors.miniDesserts.forEach(function (flavor, idx) { %>
+                  <li>
+                    <label class="bs-order-flavor-check" for="co-flavor-mini-<%= idx %>">
+                      <input class="uk-checkbox" type="checkbox" name="mini_dessert_flavor[]" id="co-flavor-mini-<%= idx %>" value="<%= flavor %>" data-flavor-group="mini" disabled>
+                      <%= flavor %>
+                    </label>
+                  </li>
+                  <% }); } %>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bs-order-type-option">
+              <label class="bs-order-check" for="co-type-desi"><input class="uk-checkbox" id="co-type-desi" name="order_type[]" type="checkbox" value="Desi fusion desserts" data-bs-flavor="desi"> Desi Fusion Desserts (dozen)</label>
+              <div id="co-flavor-wrap-desi" class="bs-order-flavor-wrap" hidden>
+                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required.</p>
+                <ul class="bs-order-flavor-list" role="group" aria-labelledby="co-flavor-desi-legend">
+                  <% if (typeof orderFlavors !== "undefined" && orderFlavors.desiFusion) { orderFlavors.desiFusion.forEach(function (flavor, idx) { %>
+                  <li>
+                    <label class="bs-order-flavor-check" for="co-flavor-desi-<%= idx %>">
+                      <input class="uk-checkbox" type="checkbox" name="desi_fusion_flavor[]" id="co-flavor-desi-<%= idx %>" value="<%= flavor %>" data-flavor-group="desi" disabled>
+                      <%= flavor %>
+                    </label>
+                  </li>
+                  <% }); } %>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bs-order-type-option">
+              <label class="bs-order-check" for="co-type-shortbread"><input class="uk-checkbox" id="co-type-shortbread" name="order_type[]" type="checkbox" value="Cookies & shortbreads" data-bs-flavor="shortbread"> Cookies &amp; Shortbreads (dozen)</label>
+              <div id="co-flavor-wrap-shortbread" class="bs-order-flavor-wrap" hidden>
+                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required.</p>
+                <ul class="bs-order-flavor-list" role="group" aria-labelledby="co-flavor-shortbread-legend">
+                  <% if (typeof orderFlavors !== "undefined" && orderFlavors.shortbreads) { orderFlavors.shortbreads.forEach(function (flavor, idx) { %>
+                  <li>
+                    <label class="bs-order-flavor-check" for="co-flavor-shortbread-<%= idx %>">
+                      <input class="uk-checkbox" type="checkbox" name="shortbread_flavor[]" id="co-flavor-shortbread-<%= idx %>" value="<%= flavor %>" data-flavor-group="shortbread" disabled>
+                      <%= flavor %>
+                    </label>
+                  </li>
+                  <% }); } %>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bs-order-type-option">
+              <label class="bs-order-check" for="co-type-logo"><input class="uk-checkbox" id="co-type-logo" name="order_type[]" type="checkbox" value="Logo cookies"> Logo Cookies (dozen)</label>
+              <div id="co-logo-instruction-wrap" class="bs-order-flavor-wrap" hidden>
+                <p class="bs-order-hint">Please email your logo to <a href="mailto:orders@butterandsaffron.com">orders@butterandsaffron.com</a>.</p>
+              </div>
+            </div>
+            <div class="bs-order-type-option">
+              <label class="bs-order-check" for="co-type-confections"><input class="uk-checkbox" id="co-type-confections" name="order_type[]" type="checkbox" value="Confections"> Confections &amp; Pastries (dozen)</label>
+            </div>
+            <div class="bs-order-type-option">
+              <label class="bs-order-check" for="co-type-other"><input class="uk-checkbox" id="co-type-other" name="order_type[]" type="checkbox" value="Other"> Other (describe in notes below)</label>
+            </div>
           </fieldset>
-          <div class="uk-margin">
-            <label class="uk-form-label" for="co-flavor">Flavors &amp; preferences <span class="bs-req" aria-hidden="true">*</span></label>
-            <textarea class="uk-textarea" id="co-flavor" name="flavors" rows="3" required placeholder="Flavors, dietary needs, size ideas"></textarea>
-          </div>
           <div class="uk-margin">
             <label class="uk-form-label" for="co-allergies">Food allergies</label>
             <textarea class="uk-textarea" id="co-allergies" name="allergies" rows="2" placeholder="List any allergies or leave blank"></textarea>
-          </div>
-          <div class="uk-margin">
-            <label class="uk-form-label" for="co-servings">Servings or quantity needed <span class="bs-req" aria-hidden="true">*</span></label>
-            <input class="uk-input" id="co-servings" name="servings" type="text" required>
           </div>
           <div class="uk-margin">
             <label class="uk-form-label" for="co-notes">Design &amp; order notes <span class="bs-req" aria-hidden="true">*</span></label>
@@ -107,6 +159,69 @@
       if (!form) return;
       var err = document.getElementById("order-type-error");
       var boxes = form.querySelectorAll('input[name="order_type[]"]');
+
+      function syncFlavorControls(checkbox) {
+        var key = checkbox.getAttribute("data-bs-flavor");
+        if (!key) return;
+        var wrap = document.getElementById("co-flavor-wrap-" + key);
+        if (!wrap) return;
+        var inputs = wrap.querySelectorAll('input[data-flavor-group="' + key + '"]');
+        if (checkbox.checked) {
+          wrap.hidden = false;
+          inputs.forEach(function (inp) {
+            inp.disabled = false;
+          });
+        } else {
+          wrap.hidden = true;
+          inputs.forEach(function (inp) {
+            inp.disabled = true;
+            inp.checked = false;
+          });
+        }
+      }
+
+      function clearFlavorErrorIfOk() {
+        var fe = document.getElementById("order-flavor-error");
+        if (!fe || fe.hidden) return;
+        var pairs = [
+          { typeId: "co-type-mini", group: "mini" },
+          { typeId: "co-type-desi", group: "desi" },
+          { typeId: "co-type-shortbread", group: "shortbread" },
+        ];
+        var ok = true;
+        pairs.forEach(function (p) {
+          var tcb = document.getElementById(p.typeId);
+          if (tcb && tcb.checked) {
+            var n = form.querySelectorAll('input[data-flavor-group="' + p.group + '"]:checked').length;
+            if (n === 0) ok = false;
+          }
+        });
+        if (ok) fe.hidden = true;
+      }
+
+      form.querySelectorAll('input[name="order_type[]"][data-bs-flavor]').forEach(function (cb) {
+        cb.addEventListener("change", function () {
+          syncFlavorControls(cb);
+          clearFlavorErrorIfOk();
+        });
+        syncFlavorControls(cb);
+      });
+
+      form.querySelectorAll("input[data-flavor-group]").forEach(function (inp) {
+        inp.addEventListener("change", clearFlavorErrorIfOk);
+      });
+
+      var logoCb = document.getElementById("co-type-logo");
+      var logoWrap = document.getElementById("co-logo-instruction-wrap");
+      function syncLogoInstruction() {
+        if (!logoWrap) return;
+        logoWrap.hidden = !logoCb || !logoCb.checked;
+      }
+      if (logoCb) {
+        logoCb.addEventListener("change", syncLogoInstruction);
+        syncLogoInstruction();
+      }
+
       form.addEventListener("submit", function (e) {
         var any = false;
         boxes.forEach(function (b) {
@@ -114,13 +229,33 @@
         });
         if (!any) {
           e.preventDefault();
-          if (err) {
-            err.hidden = false;
-          }
+          if (err) err.hidden = false;
+          var fe = document.getElementById("order-flavor-error");
+          if (fe) fe.hidden = true;
           return;
         }
         if (err) err.hidden = true;
+
+        var flavorErr = document.getElementById("order-flavor-error");
+        var pairs = [
+          { typeId: "co-type-mini", group: "mini" },
+          { typeId: "co-type-desi", group: "desi" },
+          { typeId: "co-type-shortbread", group: "shortbread" },
+        ];
+        for (var i = 0; i < pairs.length; i++) {
+          var tcb = document.getElementById(pairs[i].typeId);
+          if (tcb && tcb.checked) {
+            var n = form.querySelectorAll('input[data-flavor-group="' + pairs[i].group + '"]:checked').length;
+            if (n === 0) {
+              e.preventDefault();
+              if (flavorErr) flavorErr.hidden = false;
+              return;
+            }
+          }
+        }
+        if (flavorErr) flavorErr.hidden = true;
       });
+
       boxes.forEach(function (b) {
         b.addEventListener("change", function () {
           if (err && !err.hidden) {

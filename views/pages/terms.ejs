@@ -1,0 +1,92 @@
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body>
+  <%- include('../partials/topnav'); %>
+  <main class="bs-content">
+    <%- include('../partials/header', { title: 'Terms', price: '', header: 'bs-terms-header' }); %>
+    <div class="bs-page-content">
+      <div class="bs-about-content">
+       
+
+        <section class="uk-margin-medium-bottom" aria-labelledby="terms-payment">
+          <h3 id="terms-payment">ACCEPTED PAYMENT METHODS</h3>
+          <p>Credit card (Square invoice), Zelle, Venmo, or cash.</p>
+        </section>
+
+        <section class="uk-margin-medium-bottom" aria-labelledby="terms-delivery-setup">
+          <h3 id="terms-delivery-setup">DELIVERY &amp; SETUP</h3>
+          <p>Butter &amp; Saffron provides curated dessert table styling, which includes the following:</p>
+          <ul class="uk-list uk-list-bullet">
+            <li>Table linens (black, white, blush pink, sequined gold, and sequined rose gold)</li>
+            <li>Dessert stands (silver, white, gold, and gold &amp; crystal)</li>
+            <li>Light florals and greenery (blush pink and lavender)</li>
+            <li>Printed menus with allergen listings</li>
+            <li>Dessert spoons</li>
+          </ul>
+          <p class="bs-terms-strong">The client is responsible for providing a table for setup, napkins, and dessert plates (if needed). Napkins, dessert plates, and additional styling items may be provided by Butter &amp; Saffron for an additional fee.</p>
+        </section>
+
+        <section class="uk-margin-medium-bottom" aria-labelledby="terms-delivery-fees">
+          <!-- <h3 id="terms-delivery-fees">Delivery and Set Up Fees (Distance from Plano, TX 75075)</h3> -->
+          <div class="uk-overflow-auto">
+            <table class="uk-table uk-table-divider uk-table-striped uk-margin-small-top">
+              <caption class="uk-text-bold uk-text-left uk-margin-small-bottom">Delivery & Setup Fees (from Plano, TX)</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Distance</th>
+                  <th scope="col">Fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1-15 miles</td>
+                  <td>$70</td>
+                </tr>
+                <tr>
+                  <td>16-30 miles</td>
+                  <td>$80</td>
+                </tr>
+                <tr>
+                  <td>31-45 miles</td>
+                  <td>$90</td>
+                </tr>
+                <tr>
+                  <td>46-60 miles</td>
+                  <td>$100</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="uk-margin-medium-bottom" aria-labelledby="terms-cancellation">
+          <h3 id="terms-cancellation">CANCELLATION &amp; RESCHEDULING</h3>
+          <p>Cancellations made within ten (10) days of the event will result in forfeiture of the deposit due to preparation, ingredient sourcing, and scheduling commitments.</p>
+          <p>Events may be rescheduled with two (2) or more weeks’ notice, subject to availability. Requests made with less than two weeks’ notice are subject to availability and a 20% rescheduling fee.</p>
+        </section>
+
+        <section class="uk-margin-medium-bottom" aria-labelledby="terms-setup-breakdown">
+          <h3 id="terms-setup-breakdown">SETUP &amp; BREAKDOWN</h3>
+          <p>Butter &amp; Saffron requires 1.5 hours prior to the event for setup and 1 hour following the event for breakdown. On-site staffing during the event to monitor or restock desserts is available upon request and billed at $50 per hour.</p>
+        </section>
+
+        <section class="uk-margin-medium-bottom" aria-labelledby="terms-conditions">
+          <h3 id="terms-conditions">ADDITIONAL TERMS</h3>
+          <ul class="uk-list uk-list-bullet">
+            <li>Indoor events are strongly recommended. Outdoor events require a covered setup area.</li>
+            <li>Final guest count and menu selections must be confirmed by the agreed deadline.</li>
+            <li>Menu changes after confirmation are subject to availability and pricing adjustments.</li>
+            <li>Butter &amp; Saffron is not responsible for circumstances beyond reasonable control.</li>
+            <li>The client agrees to reimburse Butter &amp; Saffron for any damage to equipment or décor.</li>
+            <li>Client must provide venue access and parking 1.5 hours prior to the event.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
+</body>

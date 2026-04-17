@@ -1,4 +1,5 @@
 var path = require("path");
+var orderFlavors = require("./order-flavors");
 
 module.exports = function (app) {
 
@@ -21,7 +22,8 @@ module.exports = function (app) {
     res.render("pages/order", {
       pageTitle: "Custom Orders | Butter & Saffron",
       formNextUrl: baseUrl + "/order?sent=1",
-      submitted: req.query.sent === "1"
+      submitted: req.query.sent === "1",
+      orderFlavors: orderFlavors,
     });
   });
 
@@ -31,6 +33,12 @@ module.exports = function (app) {
 
   app.get("/faq", async (req,res) => {
     res.render("pages/faq");
+  });
+
+  app.get("/terms", async (req,res) => {
+    res.render("pages/terms", {
+      pageTitle: "Terms | Butter & Saffron"
+    });
   });
 
   app.get("/desidesserts", async (req,res) => {
