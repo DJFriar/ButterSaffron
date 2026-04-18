@@ -106,6 +106,9 @@ module.exports = function (app) {
       { name: 'Logo Cookies', image: 'LogoCookies.jpg', description: 'Can be customized with a logo or image of your choice. 2.5" cookie $36/dz, 3" cookie $48/dz. ', allergens: '' },
       { name: 'Setup & Stand Rental', image: 'DessertSetup.jpg', description: 'Starting at $50', allergens: '' }
     ]
-    res.render("pages/tables", {menuItems: menuItems });
+    res.render("pages/tables", {
+      menuItems: menuItems,
+      pageTitle: "Confections & Pastries | Butter & Saffron",
+    });
   });
 }
