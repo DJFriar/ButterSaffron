@@ -64,8 +64,8 @@
             <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Setup"> Setup</label>
           </fieldset>
           <div class="uk-margin">
-            <label class="uk-form-label" for="co-time">Pickup / delivery time <span class="bs-req" aria-hidden="true">*</span></label>
-            <input class="uk-input" id="co-time" name="pickup_delivery_time" type="text" placeholder="e.g. Saturday 2pm" required>
+            <label class="uk-form-label" for="co-time">Delivery and setup time <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-time" name="delivery_setup_time" type="text" placeholder="e.g. Saturday 2pm" required>
           </div>
           <fieldset class="uk-margin bs-order-type-fieldset" aria-describedby="order-type-error order-flavor-error">
             <legend class="uk-form-label uk-margin-small-bottom">Please select the types of desserts you are interested in <span class="bs-req" aria-hidden="true">*</span> <span class="bs-order-hint">(select all that apply)</span></legend>
@@ -126,11 +126,24 @@
             <div class="bs-order-type-option">
               <label class="bs-order-check" for="co-type-logo"><input class="uk-checkbox" id="co-type-logo" name="order_type[]" type="checkbox" value="Logo cookies"> Logo Cookies (dozen)</label>
               <div id="co-logo-instruction-wrap" class="bs-order-flavor-wrap" hidden>
-                <p class="bs-order-hint">Please email your logo to <a href="mailto:orders@butterandsaffron.com">orders@butterandsaffron.com</a>.</p>
+                <p class="bs-order-hint">Please email your logo and/or image(s) to <a href="mailto:orders@butterandsaffron.com">orders@butterandsaffron.com</a>.</p>
               </div>
             </div>
             <div class="bs-order-type-option">
-              <label class="bs-order-check" for="co-type-confections"><input class="uk-checkbox" id="co-type-confections" name="order_type[]" type="checkbox" value="Confections"> Confections &amp; Pastries (dozen)</label>
+              <label class="bs-order-check" for="co-type-confections"><input class="uk-checkbox" id="co-type-confections" name="order_type[]" type="checkbox" value="Confections" data-bs-flavor="confections"> Confections &amp; Pastries (dozen)</label>
+              <div id="co-flavor-wrap-confections" class="bs-order-flavor-wrap" hidden>
+                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required.</p>
+                <ul class="bs-order-flavor-list" role="group" aria-labelledby="co-flavor-confections-legend">
+                  <% if (typeof orderFlavors !== "undefined" && orderFlavors.confections) { orderFlavors.confections.forEach(function (flavor, idx) { %>
+                  <li>
+                    <label class="bs-order-flavor-check" for="co-flavor-confections-<%= idx %>">
+                      <input class="uk-checkbox" type="checkbox" name="confections_flavor[]" id="co-flavor-confections-<%= idx %>" value="<%= flavor %>" data-flavor-group="confections" disabled>
+                      <%= flavor %>
+                    </label>
+                  </li>
+                  <% }); } %>
+                </ul>
+              </div>
             </div>
             <div class="bs-order-type-option">
               <label class="bs-order-check" for="co-type-other"><input class="uk-checkbox" id="co-type-other" name="order_type[]" type="checkbox" value="Other"> Other (describe in notes below)</label>
@@ -187,6 +200,7 @@
           { typeId: "co-type-mini", group: "mini" },
           { typeId: "co-type-desi", group: "desi" },
           { typeId: "co-type-shortbread", group: "shortbread" },
+          { typeId: "co-type-confections", group: "confections" },
         ];
         var ok = true;
         pairs.forEach(function (p) {
@@ -241,6 +255,7 @@
           { typeId: "co-type-mini", group: "mini" },
           { typeId: "co-type-desi", group: "desi" },
           { typeId: "co-type-shortbread", group: "shortbread" },
+          { typeId: "co-type-confections", group: "confections" },
         ];
         for (var i = 0; i < pairs.length; i++) {
           var tcb = document.getElementById(pairs[i].typeId);

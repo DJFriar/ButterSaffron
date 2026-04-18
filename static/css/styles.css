@@ -757,6 +757,22 @@ a:active {
   }
 }
 
+/* Narrow screens: row 1 name+title, row 2 phone+email, row 3 website */
+@media (max-width: 767px) {
+  .bs-footer-line {
+    display: block;
+  }
+  .bs-footer-line + .bs-footer-line {
+    margin-top: 0.25em;
+  }
+  .bs-footer-line--identity {
+    white-space: nowrap;
+  }
+  .bs-footer-phone {
+    white-space: nowrap;
+  }
+}
+
 .bs-footer-container a,
 .bs-footer-link {
   color: #BF8978;
