@@ -46,8 +46,8 @@
             <input class="uk-input" id="co-phone" name="phone" type="tel" required autocomplete="tel">
           </div>
           <div class="uk-margin">
-            <label class="uk-form-label" for="co-date">Event start date <span class="bs-req" aria-hidden="true">*</span></label>
-            <input class="uk-input" id="co-date" name="order_date" type="date" required>
+            <label class="uk-form-label" for="co-datetime">Event start date and time <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-datetime" name="order_date" type="datetime-local" required>
           </div>
           <div class="uk-margin">
             <label class="uk-form-label" for="co-address">Event venue address</label>
@@ -64,8 +64,8 @@
             <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Setup"> Setup</label>
           </fieldset>
           <div class="uk-margin">
-            <label class="uk-form-label" for="co-time">Delivery and setup time <span class="bs-req" aria-hidden="true">*</span></label>
-            <input class="uk-input" id="co-time" name="delivery_setup_time" type="text" placeholder="e.g. Saturday 2pm" required>
+            <label class="uk-form-label" for="co-delivery-datetime">Delivery and setup date and time <span class="bs-req" aria-hidden="true">*</span></label>
+            <input class="uk-input" id="co-delivery-datetime" name="delivery_setup_time" type="datetime-local" required>
           </div>
           <fieldset class="uk-margin bs-order-type-fieldset" aria-describedby="order-type-error order-flavor-error">
             <legend class="uk-form-label uk-margin-small-bottom">Please select the types of desserts you are interested in <span class="bs-req" aria-hidden="true">*</span> <span class="bs-order-hint">(select all that apply)</span></legend>
