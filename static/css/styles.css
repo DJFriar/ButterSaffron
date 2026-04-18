@@ -757,6 +757,21 @@ a:active {
   }
 }
 
+/* Pipes only on wide layouts; hidden on stacked rows so no row begins with | */
+.bs-footer-sep--between-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .bs-footer-sep--between-desktop {
+    display: inline;
+  }
+  /* Avoid a line break leaving "|" alone at the start of the next line (768–~800px) */
+  .bs-footer-keep-with-pipe {
+    white-space: nowrap;
+  }
+}
+
 /* Narrow screens: row 1 name+title, row 2 phone+email, row 3 website */
 @media (max-width: 767px) {
   .bs-footer-line {
