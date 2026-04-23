@@ -1406,6 +1406,46 @@ img[uk-img][src] {
   margin-bottom: 0;
 }
 
+.bs-order-flavor-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+
+.bs-order-flavor-row .bs-order-flavor-check {
+  flex: 1 1 200px;
+  margin-bottom: 0;
+}
+
+.bs-order-flavor-qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.bs-order-flavor-qty-label {
+  font-family: 'Lora', serif;
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.bs-order-flavor-qty-input {
+  width: 4.5rem;
+  min-width: 4rem;
+  padding: 6px 8px;
+  text-align: center;
+}
+
+.bs-order-flavor-qty-input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 .bs-order-flavor-check {
   display: flex;
   align-items: flex-start;

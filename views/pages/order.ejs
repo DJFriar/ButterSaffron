@@ -60,29 +60,34 @@
           <fieldset class="uk-margin">
             <legend class="uk-form-label uk-margin-small-bottom">Pickup or delivery? <span class="bs-req" aria-hidden="true">*</span></legend>
             <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Pickup" required> Pickup</label>
-            <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Delivery"> Delivery</label>
-            <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Setup"> Setup</label>
+            <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Delivery"> Delivery Only</label>
+            <label class="bs-order-radio"><input class="uk-radio" name="pickup_or_delivery" type="radio" value="Setup"> Delivery and Setup</label>
           </fieldset>
           <div class="uk-margin">
             <label class="uk-form-label" for="co-delivery-datetime">Delivery and setup date and time</label>
             <input class="uk-input" id="co-delivery-datetime" name="delivery_setup_time" type="datetime-local">
           </div>
-          <fieldset class="uk-margin bs-order-type-fieldset" aria-describedby="order-type-error order-flavor-error">
+          <fieldset class="uk-margin bs-order-type-fieldset" aria-describedby="order-type-error order-flavor-error order-flavor-qty-error">
             <legend class="uk-form-label uk-margin-small-bottom">Please select the types of desserts you are interested in <span class="bs-req" aria-hidden="true">*</span> <span class="bs-order-hint">(select all that apply)</span></legend>
             <p id="order-type-error" class="bs-order-type-error" role="alert" hidden>Please select at least one option.</p>
             <p id="order-flavor-error" class="bs-order-type-error" role="alert" hidden>Please select at least one flavor for each dessert type you checked.</p>
+            <p id="order-flavor-qty-error" class="bs-order-type-error" role="alert" hidden>Please enter a quantity (dozen) of at least 1 for each flavor you selected.</p>
 
             <div class="bs-order-type-option">
               <label class="bs-order-check" for="co-type-mini"><input class="uk-checkbox" id="co-type-mini" name="order_type[]" type="checkbox" value="Mini desserts" data-bs-flavor="mini"> Mini Desserts (dozen)</label>
               <div id="co-flavor-wrap-mini" class="bs-order-flavor-wrap" hidden>
-                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required.</p>
+                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required. For each flavor, enter how many dozen.</p>
                 <ul class="bs-order-flavor-list" role="group" aria-labelledby="co-flavor-mini-legend">
                   <% if (typeof orderFlavors !== "undefined" && orderFlavors.miniDesserts) { orderFlavors.miniDesserts.forEach(function (flavor, idx) { %>
-                  <li>
+                  <li class="bs-order-flavor-row">
                     <label class="bs-order-flavor-check" for="co-flavor-mini-<%= idx %>">
                       <input class="uk-checkbox" type="checkbox" name="mini_dessert_flavor[]" id="co-flavor-mini-<%= idx %>" value="<%= flavor %>" data-flavor-group="mini" disabled>
                       <%= flavor %>
                     </label>
+                    <div class="bs-order-flavor-qty">
+                      <label class="bs-order-flavor-qty-label" for="co-flavor-mini-qty-<%= idx %>">Dozen</label>
+                      <input class="uk-input bs-order-flavor-qty-input" type="number" name="mini_dessert_flavor_qty[]" id="co-flavor-mini-qty-<%= idx %>" step="1" inputmode="numeric" data-flavor-qty-group="mini" placeholder="—" title="How many dozen of this flavor" disabled aria-disabled="true">
+                    </div>
                   </li>
                   <% }); } %>
                 </ul>
@@ -92,14 +97,18 @@
             <div class="bs-order-type-option">
               <label class="bs-order-check" for="co-type-desi"><input class="uk-checkbox" id="co-type-desi" name="order_type[]" type="checkbox" value="Desi fusion desserts" data-bs-flavor="desi"> Desi Fusion Desserts (dozen)</label>
               <div id="co-flavor-wrap-desi" class="bs-order-flavor-wrap" hidden>
-                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required.</p>
+                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required. For each flavor, enter how many dozen.</p>
                 <ul class="bs-order-flavor-list" role="group" aria-labelledby="co-flavor-desi-legend">
                   <% if (typeof orderFlavors !== "undefined" && orderFlavors.desiFusion) { orderFlavors.desiFusion.forEach(function (flavor, idx) { %>
-                  <li>
+                  <li class="bs-order-flavor-row">
                     <label class="bs-order-flavor-check" for="co-flavor-desi-<%= idx %>">
                       <input class="uk-checkbox" type="checkbox" name="desi_fusion_flavor[]" id="co-flavor-desi-<%= idx %>" value="<%= flavor %>" data-flavor-group="desi" disabled>
                       <%= flavor %>
                     </label>
+                    <div class="bs-order-flavor-qty">
+                      <label class="bs-order-flavor-qty-label" for="co-flavor-desi-qty-<%= idx %>">Dozen</label>
+                      <input class="uk-input bs-order-flavor-qty-input" type="number" name="desi_fusion_flavor_qty[]" id="co-flavor-desi-qty-<%= idx %>" step="1" inputmode="numeric" data-flavor-qty-group="desi" placeholder="—" title="How many dozen of this flavor" disabled aria-disabled="true">
+                    </div>
                   </li>
                   <% }); } %>
                 </ul>
@@ -109,14 +118,18 @@
             <div class="bs-order-type-option">
               <label class="bs-order-check" for="co-type-shortbread"><input class="uk-checkbox" id="co-type-shortbread" name="order_type[]" type="checkbox" value="Cookies & shortbreads" data-bs-flavor="shortbread"> Cookies &amp; Shortbreads (dozen)</label>
               <div id="co-flavor-wrap-shortbread" class="bs-order-flavor-wrap" hidden>
-                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required.</p>
+                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required. For each flavor, enter how many dozen.</p>
                 <ul class="bs-order-flavor-list" role="group" aria-labelledby="co-flavor-shortbread-legend">
                   <% if (typeof orderFlavors !== "undefined" && orderFlavors.shortbreads) { orderFlavors.shortbreads.forEach(function (flavor, idx) { %>
-                  <li>
+                  <li class="bs-order-flavor-row">
                     <label class="bs-order-flavor-check" for="co-flavor-shortbread-<%= idx %>">
                       <input class="uk-checkbox" type="checkbox" name="shortbread_flavor[]" id="co-flavor-shortbread-<%= idx %>" value="<%= flavor %>" data-flavor-group="shortbread" disabled>
                       <%= flavor %>
                     </label>
+                    <div class="bs-order-flavor-qty">
+                      <label class="bs-order-flavor-qty-label" for="co-flavor-shortbread-qty-<%= idx %>">Dozen</label>
+                      <input class="uk-input bs-order-flavor-qty-input" type="number" name="shortbread_flavor_qty[]" id="co-flavor-shortbread-qty-<%= idx %>" step="1" inputmode="numeric" data-flavor-qty-group="shortbread" placeholder="—" title="How many dozen of this flavor" disabled aria-disabled="true">
+                    </div>
                   </li>
                   <% }); } %>
                 </ul>
@@ -132,14 +145,18 @@
             <div class="bs-order-type-option">
               <label class="bs-order-check" for="co-type-confections"><input class="uk-checkbox" id="co-type-confections" name="order_type[]" type="checkbox" value="Confections" data-bs-flavor="confections"> Confections &amp; Pastries (dozen)</label>
               <div id="co-flavor-wrap-confections" class="bs-order-flavor-wrap" hidden>
-                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required.</p>
+                <p class="bs-order-hint uk-margin-remove-top">Minimum of one dozen required. For each flavor, enter how many dozen.</p>
                 <ul class="bs-order-flavor-list" role="group" aria-labelledby="co-flavor-confections-legend">
                   <% if (typeof orderFlavors !== "undefined" && orderFlavors.confections) { orderFlavors.confections.forEach(function (flavor, idx) { %>
-                  <li>
+                  <li class="bs-order-flavor-row">
                     <label class="bs-order-flavor-check" for="co-flavor-confections-<%= idx %>">
                       <input class="uk-checkbox" type="checkbox" name="confections_flavor[]" id="co-flavor-confections-<%= idx %>" value="<%= flavor %>" data-flavor-group="confections" disabled>
                       <%= flavor %>
                     </label>
+                    <div class="bs-order-flavor-qty">
+                      <label class="bs-order-flavor-qty-label" for="co-flavor-confections-qty-<%= idx %>">Dozen</label>
+                      <input class="uk-input bs-order-flavor-qty-input" type="number" name="confections_flavor_qty[]" id="co-flavor-confections-qty-<%= idx %>" step="1" inputmode="numeric" data-flavor-qty-group="confections" placeholder="—" title="How many dozen of this flavor" disabled aria-disabled="true">
+                    </div>
                   </li>
                   <% }); } %>
                 </ul>
@@ -173,44 +190,94 @@
       var err = document.getElementById("order-type-error");
       var boxes = form.querySelectorAll('input[name="order_type[]"]');
 
+      function flavorCheckboxesInWrap(wrap, key) {
+        return wrap.querySelectorAll('input[type="checkbox"][data-flavor-group="' + key + '"]');
+      }
+
+      function flavorQtyInputsInWrap(wrap, key) {
+        return wrap.querySelectorAll('input[type="number"][data-flavor-qty-group="' + key + '"]');
+      }
+
+      function syncRowQty(flavorCheckbox) {
+        var li = flavorCheckbox.closest("li");
+        if (!li) return;
+        var q = li.querySelector('input[type="number"][data-flavor-qty-group]');
+        if (!q) return;
+        var sectionOk = flavorCheckbox.checked && !flavorCheckbox.disabled;
+        if (sectionOk) {
+          q.disabled = false;
+          q.setAttribute("aria-disabled", "false");
+          var n = parseInt(String(q.value).trim(), 10);
+          if (!n || n < 1) q.value = "1";
+        } else {
+          q.disabled = true;
+          q.setAttribute("aria-disabled", "true");
+          q.value = "";
+        }
+      }
+
       function syncFlavorControls(checkbox) {
         var key = checkbox.getAttribute("data-bs-flavor");
         if (!key) return;
         var wrap = document.getElementById("co-flavor-wrap-" + key);
         if (!wrap) return;
-        var inputs = wrap.querySelectorAll('input[data-flavor-group="' + key + '"]');
+        var cbs = flavorCheckboxesInWrap(wrap, key);
+        var qtys = flavorQtyInputsInWrap(wrap, key);
         if (checkbox.checked) {
           wrap.hidden = false;
-          inputs.forEach(function (inp) {
+          cbs.forEach(function (inp) {
             inp.disabled = false;
           });
+          cbs.forEach(syncRowQty);
         } else {
           wrap.hidden = true;
-          inputs.forEach(function (inp) {
+          cbs.forEach(function (inp) {
             inp.disabled = true;
             inp.checked = false;
+          });
+          qtys.forEach(function (q) {
+            q.disabled = true;
+            q.setAttribute("aria-disabled", "true");
+            q.value = "";
           });
         }
       }
 
+      function flavorQtysValid() {
+        var ok = true;
+        form.querySelectorAll('input[type="checkbox"][data-flavor-group]:checked').forEach(function (cb) {
+          if (cb.disabled) return;
+          var li = cb.closest("li");
+          var q = li && li.querySelector('input[type="number"][data-flavor-qty-group]');
+          if (!q || q.disabled) {
+            ok = false;
+            return;
+          }
+          var n = parseInt(String(q.value).trim(), 10);
+          if (!n || n < 1) ok = false;
+        });
+        return ok;
+      }
+
       function clearFlavorErrorIfOk() {
         var fe = document.getElementById("order-flavor-error");
-        if (!fe || fe.hidden) return;
+        var fqe = document.getElementById("order-flavor-qty-error");
         var pairs = [
           { typeId: "co-type-mini", group: "mini" },
           { typeId: "co-type-desi", group: "desi" },
           { typeId: "co-type-shortbread", group: "shortbread" },
           { typeId: "co-type-confections", group: "confections" },
         ];
-        var ok = true;
+        var selectionOk = true;
         pairs.forEach(function (p) {
           var tcb = document.getElementById(p.typeId);
           if (tcb && tcb.checked) {
-            var n = form.querySelectorAll('input[data-flavor-group="' + p.group + '"]:checked').length;
-            if (n === 0) ok = false;
+            var n = form.querySelectorAll('input[type="checkbox"][data-flavor-group="' + p.group + '"]:checked').length;
+            if (n === 0) selectionOk = false;
           }
         });
-        if (ok) fe.hidden = true;
+        if (fe && !fe.hidden && selectionOk) fe.hidden = true;
+        if (fqe && !fqe.hidden && flavorQtysValid()) fqe.hidden = true;
       }
 
       form.querySelectorAll('input[name="order_type[]"][data-bs-flavor]').forEach(function (cb) {
@@ -221,7 +288,15 @@
         syncFlavorControls(cb);
       });
 
-      form.querySelectorAll("input[data-flavor-group]").forEach(function (inp) {
+      form.querySelectorAll('input[type="checkbox"][data-flavor-group]').forEach(function (inp) {
+        inp.addEventListener("change", function () {
+          syncRowQty(inp);
+          clearFlavorErrorIfOk();
+        });
+      });
+
+      form.querySelectorAll('input[type="number"][data-flavor-qty-group]').forEach(function (inp) {
+        inp.addEventListener("input", clearFlavorErrorIfOk);
         inp.addEventListener("change", clearFlavorErrorIfOk);
       });
 
@@ -246,11 +321,14 @@
           if (err) err.hidden = false;
           var fe = document.getElementById("order-flavor-error");
           if (fe) fe.hidden = true;
+          var fqe0 = document.getElementById("order-flavor-qty-error");
+          if (fqe0) fqe0.hidden = true;
           return;
         }
         if (err) err.hidden = true;
 
         var flavorErr = document.getElementById("order-flavor-error");
+        var flavorQtyErr = document.getElementById("order-flavor-qty-error");
         var pairs = [
           { typeId: "co-type-mini", group: "mini" },
           { typeId: "co-type-desi", group: "desi" },
@@ -260,15 +338,23 @@
         for (var i = 0; i < pairs.length; i++) {
           var tcb = document.getElementById(pairs[i].typeId);
           if (tcb && tcb.checked) {
-            var n = form.querySelectorAll('input[data-flavor-group="' + pairs[i].group + '"]:checked').length;
+            var n = form.querySelectorAll('input[type="checkbox"][data-flavor-group="' + pairs[i].group + '"]:checked').length;
             if (n === 0) {
               e.preventDefault();
               if (flavorErr) flavorErr.hidden = false;
+              if (flavorQtyErr) flavorQtyErr.hidden = true;
               return;
             }
           }
         }
         if (flavorErr) flavorErr.hidden = true;
+
+        if (!flavorQtysValid()) {
+          e.preventDefault();
+          if (flavorQtyErr) flavorQtyErr.hidden = false;
+          return;
+        }
+        if (flavorQtyErr) flavorQtyErr.hidden = true;
       });
 
       boxes.forEach(function (b) {
